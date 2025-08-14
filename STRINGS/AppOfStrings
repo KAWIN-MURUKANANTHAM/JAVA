@@ -1,6 +1,6 @@
 import java.lang.*;
 import java.util.Arrays;
-public class W5EX1 {
+public class AppOfStrings {
     public static void main(String[] args) {
         String s1 = new String("Welcome to java");
         String s2 = s1;
