@@ -1,0 +1,39 @@
+class LivingBeing{
+    void Breath(){
+        System.out.println("it's breathing");
+    }
+    void Responce(){
+        System.out.println("it's Responding");
+    }
+}
+class Animal extends LivingBeing{
+    void walk(){
+        System.out.println("it can walk");
+    }
+    void NoOfLegs(){
+        System.out.println("it has 4 legs");
+    }
+}
+class Cat extends Animal{
+    void Meow(){
+        System.out.println("cat Meows");
+    }
+}
+class Dog extends Cat{
+    void Bark(){
+        System.out.println("Dog Barks");
+    }
+}
+
+public class inheritance{
+    public static void main(String[] args){
+        Dog obj=new Dog();
+        System.out.println("NAME:M.KAWIN\nREG.NO:2024503535\n");
+        obj.Breath();
+        obj.Responce();
+        obj.walk();
+        obj.NoOfLegs();
+        obj.Meow();
+        obj.Bark();
+    }
+}
