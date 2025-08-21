@@ -1,0 +1,99 @@
+class Animal {
+    void move() {
+        System.out.println("it can move");
+    }
+
+    void move(String direction) {
+        System.out.println("The direction it moves:" + direction);
+    }
+
+    void move(int distance) {
+        System.out.println("the distance it moves:" + distance);
+    }
+
+    void move(String direction, int distance) {
+           System.out.println("The direction and distance it moves:"+ direction+"-"+ distance+"\n");
+    }
+
+}
+class Dog extends Animal{
+    @Override
+    void move() {
+        System.out.println("Dog can move");
+    }
+    @Override
+    void move(String direction) {
+        System.out.println("The direction dog moves:" + direction);
+    }
+    @Override
+    void move(int distance) {
+        System.out.println("the distance dog moves:" + distance);
+    }
+    @Override
+    void move(String direction, int distance) {
+        System.out.println("The direction and distance dog moves:"+ direction+"-"+ distance+"\n");
+    }
+}
+class Cat extends Animal{
+    @Override
+    void move() {
+        System.out.println("Cat can move");
+    }
+    @Override
+    void move(String direction) {
+        System.out.println("The direction Cat moves:" + direction);
+    }
+    @Override
+    void move(int distance) {
+        System.out.println("the distance cat moves:" + distance);
+    }
+    @Override
+    void move(String direction, int distance) {
+        System.out.println("The direction and distance Cat moves:"+ direction+"-"+ distance+"\n");
+    }
+}
+class Bird extends Animal{
+    @Override
+    void move() {
+        System.out.println("Bird can move");
+    }
+    @Override
+    void move(String direction) {
+        System.out.println("The direction Bird moves:" + direction);
+    }
+    @Override
+    void move(int distance) {
+        System.out.println("the distance Bird moves:" + distance);
+    }
+    @Override
+    void move(String direction, int distance) {
+        System.out.println("The direction and distance Bird moves:"+ direction+"-"+ distance+"\n");
+    }
+}
+
+public class Week6 {
+    public static void main(String[] args){
+        Animal[] obj=new Animal[3];
+        obj[0]=new Dog();
+        obj[1]=new Cat();
+        obj[2]=new Bird();
+
+        System.out.println("NAME:KAWIN.M\nREG.NO:2024503535\n");
+
+        obj[0].move();
+        obj[0].move("North");
+        obj[0].move(15);
+        obj[0].move("North",15);
+
+        obj[1].move();
+        obj[1].move("SOUTH");
+        obj[1].move(10);
+        obj[1].move("SOUTH",15);
+
+        obj[2].move();
+        obj[2].move("EAST");
+        obj[2].move(35);
+        obj[2].move("EAST",35);
+
+    }
+}
