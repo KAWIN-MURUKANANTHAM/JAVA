@@ -1,0 +1,84 @@
+class Parent {
+    public Number display() {
+        System.out.println("Parent display");
+        return 10;
+    }
+    public void show() {
+        System.out.println("Parent show");
+    }
+    public void paramMethod() {
+        System.out.println("Parent paramMethod");
+    }
+    public void sameSignature() {
+        System.out.println("Parent sameSignature");
+    }
+    public Object covariantMethod() {
+        return "Parent object";
+    }
+    public void overload(int x) {
+        System.out.println("Parent overload with int: " + x);
+    }
+    public static void staticOverload(int x) {
+        System.out.println("Parent static overload with int: " + x);
+    }
+}
+
+class Child extends Parent {
+    public Integer display() {
+        System.out.println("Child display with covariant return");
+        return 20;
+    }
+    private void show() {
+        System.out.println("Child show with reduced visibility");
+    }
+    public void paramMethod(int x) {
+        System.out.println("Child paramMethod with parameter");
+    }
+    public int sameSignature() {
+        System.out.println("Wrong overloading attempt (same signature, diff return type)");
+        return 0;
+    }
+    public String covariantMethod() {
+        return "Child string";
+    }
+    public void overload(double d) {
+        System.out.println("Child overload with double: " + d);
+    }
+    public static void staticOverload(double d) {
+        System.out.println("Child static overload with double: " + d);
+    }
+}
+
+class AnotherChild extends Parent {
+    public void overload(String s) {
+        System.out.println("AnotherChild overload with String: " + s);
+    }
+}
+
+public class DemoCases {
+    public static void main(String[] args) {
+        Child c = new Child();
+        System.out.println("NAME:KAWIN.M\nREG.NO:2024503535");
+        c.display();
+        c.paramMethod();
+        c.paramMethod(5);
+        c.overload(10);
+        c.overload(10.5);
+        c.covariantMethod();
+        AnotherChild ac = new AnotherChild();
+        ac.overload("Hello");
+        Parent.staticOverload(5);
+        Child.staticOverload(5.5);
+        Parent p1 = new Child();
+        p1.display();
+        if (p1 instanceof Child) {
+            Child safeDown = (Child) p1;
+            safeDown.display();
+        }
+        Parent p2 = new Parent();
+        if (p2 instanceof Child) {
+            Child wrongDown = (Child) p2;
+            wrongDown.display();
+        }
+    }
+}
