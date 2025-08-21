@@ -1,0 +1,72 @@
+
+class LivingBeing{
+    private String Strname;
+    LivingBeing(String name){
+        Strname=name;
+        System.out.println("the invocked name:"+Strname);
+    }
+    void breath(){
+        System.out.println(Strname+" can breath");
+    }
+    void responce(){
+        System.out.println(Strname+" can responce");
+    }
+}
+
+class LandAnimal extends LivingBeing {
+    LandAnimal(String name){
+        super(name);
+        System.out.println("the land animal class included");
+    }
+    void Walk(){
+        System.out.println("the land animal can walk");
+    }
+    void numberOfLegs(){
+        System.out.println("usually has 4 legs ");
+    }
+}
+
+class WarteAnimal extends LivingBeing{
+    WarteAnimal(String name){
+        super(name);
+        System.out.println("the water animal included");
+    }
+    void swim(){
+        System.out.println("the water animal can swim");
+    }
+    void waterType(){
+        System.out.println("water type varies with water animal");
+    }
+}
+class Dog extends LandAnimal{
+    Dog(String name){
+        super(name);
+        System.out.println("Dog class included");
+    }
+    void bark()
+    {
+     System.out.println("dog barks");
+    }
+}
+class Cat extends LandAnimal{
+    Cat(String name){
+        super(name);
+        System.out.println("Cat class included");
+    }
+    void meow(){
+        System.out.println("Cat meows");
+    }
+}
+
+public class Week6_4 {
+    public static void main(String[] args){
+        System.out.println("NAME:KAWIN.M\nREG.NO:2024503535\n");
+        Dog obj1=new Dog("schooby");
+        obj1.bark();
+
+        System.out.println("\n");
+
+        Cat obj2=new Cat("kitty");
+        obj2.meow();
+    }
+}
